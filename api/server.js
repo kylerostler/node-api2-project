@@ -6,10 +6,10 @@ const server = express()
 
 server.use(express.json())
 
-server.use('./api/posts', postsRouter)
+server.use('/api/posts', postsRouter)
 
 server.use('*', (req, res) => {
-    res.status(400).json({
+    res.status(404).json({
         message: 'not found'
     })
 })

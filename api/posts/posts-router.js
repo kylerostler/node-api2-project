@@ -7,7 +7,7 @@ const router = express.Router()
 router.get('/', (req, res) => {
     Post.find()
     .then(found => {
-
+        res.json(found)
     }) 
     .catch(err => {
         res.status(500).json({
